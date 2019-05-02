@@ -66,7 +66,7 @@
             this.tpFromTime.Checked = false;
             this.tpFromTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpFromTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.tpFromTime.Location = new System.Drawing.Point(116, 186);
+            this.tpFromTime.Location = new System.Drawing.Point(118, 186);
             this.tpFromTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpFromTime.Name = "tpFromTime";
             this.tpFromTime.ShowUpDown = true;
@@ -77,7 +77,7 @@
             // 
             this.txtToStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtToStation.Location = new System.Drawing.Point(580, 52);
-            this.txtToStation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtToStation.Margin = new System.Windows.Forms.Padding(4);
             this.txtToStation.Name = "txtToStation";
             this.txtToStation.Size = new System.Drawing.Size(425, 27);
             this.txtToStation.TabIndex = 40;
@@ -86,7 +86,7 @@
             // 
             this.txtStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtStation.Location = new System.Drawing.Point(45, 52);
-            this.txtStation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStation.Margin = new System.Windows.Forms.Padding(4);
             this.txtStation.Name = "txtStation";
             this.txtStation.Size = new System.Drawing.Size(425, 27);
             this.txtStation.TabIndex = 39;
@@ -122,7 +122,7 @@
             this.btnDepartureBoard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDepartureBoard.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDepartureBoard.Location = new System.Drawing.Point(791, 159);
-            this.btnDepartureBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDepartureBoard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepartureBoard.Name = "btnDepartureBoard";
             this.btnDepartureBoard.Size = new System.Drawing.Size(213, 46);
             this.btnDepartureBoard.TabIndex = 42;
@@ -146,6 +146,7 @@
             this.tpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.tpFromDate.Location = new System.Drawing.Point(118, 146);
             this.tpFromDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpFromDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.tpFromDate.Name = "tpFromDate";
             this.tpFromDate.Size = new System.Drawing.Size(135, 27);
             this.tpFromDate.TabIndex = 49;
@@ -184,7 +185,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lvConnections.Location = new System.Drawing.Point(47, 284);
-            this.lvConnections.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvConnections.Margin = new System.Windows.Forms.Padding(4);
             this.lvConnections.Name = "lvConnections";
             this.lvConnections.Size = new System.Drawing.Size(959, 422);
             this.lvConnections.TabIndex = 51;
