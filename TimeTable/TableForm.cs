@@ -88,6 +88,16 @@ namespace TimeTable
                 cmbStation.SelectedIndex = 0;
             }
         }
+        //set the departureTime
+        private void SetDepartureTime()
+        {
+            departureTime = (tpFromTime.Value.Hour) + ":" + tpFromTime.Value.Minute;
+        }
+        //set the departureDate
+        private void SetDepartureDate()
+        {
+            departureDate = tpFromDate.Value.Year + "-" + tpFromDate.Value.Month + "-" + tpFromDate.Value.Day;
+        }
         public ListViewItem[] GetStationBoard(string fromStation)
         {
             Stations stations = new Stations();
@@ -174,16 +184,6 @@ namespace TimeTable
             {
                 cmbStation.SelectedIndex = 0;
             }
-        }
-        //set the departureTime
-        private void SetDepartureTime()
-        {
-            departureTime = (tpFromTime.Value.Hour) + ":" + tpFromTime.Value.Minute;
-        }
-        //set the departureDate
-        private void SetDepartureDate()
-        {
-            departureDate = tpFromDate.Value.Year + "-" + tpFromDate.Value.Month + "-" + tpFromDate.Value.Day;
         }
     }
 }
