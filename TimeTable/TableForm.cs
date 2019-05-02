@@ -33,12 +33,14 @@ namespace TimeTable
             cmbFromStation.Items.Clear();
             GetFromStation(txtFromStation.Text, cmbFromStation);
         }
+
         //show Textinput in the "Nach" Station Combobox
         private void txtToStation_TextChanged(object sender, EventArgs e)
         {
             cmbToStation.Items.Clear();
             GetToStation(txtToStation.Text, cmbToStation);
         }
+
         //show Connections in ListView
         private void btnSearchForConnections_Click(object sender, EventArgs e)
         {
@@ -47,6 +49,7 @@ namespace TimeTable
             lvTable.Items.Clear();
             lvTable.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
         }
+
         //show the Departure Board from the Current "Von" Station
         private void btnDepartureTable_Click(object sender, EventArgs e)
         {
@@ -58,6 +61,7 @@ namespace TimeTable
                 stationBoardForm.ShowDialog();
             }
         }
+
         //show the Current "Nach" Station on the Map
         private void btnMap_Click(object sender, EventArgs e)
         {
@@ -75,6 +79,7 @@ namespace TimeTable
                 emailTextForm.ShowDialog();
             }
         }
+
         //get all stations for the "Von" Station Combobox
         private void GetFromStation(string location, ComboBox cmbStation)
         {
@@ -96,11 +101,13 @@ namespace TimeTable
                 cmbStation.SelectedIndex = 0;
             }
         }
+
         //set the departureTime
         private void SetDepartureTime()
         {
             departureTime = (tpTime.Value.Hour) + ":" + tpTime.Value.Minute;
         }
+
         //set the departureDate
         private void SetDepartureDate()
         {
@@ -115,15 +122,8 @@ namespace TimeTable
             try
             {
                 stationBoard = transport.GetStationBoard(fromStation, stationId);
-            }
-            catch (Exception e)
-            {
-                ListViewItem[] errorListView = new ListViewItem[1];
-                errorListView[0] = new ListViewItem("FEHLER");
-                errorListView[0].SubItems.Add(e.Message);
-                return errorListView;
+            } catch { }
 
-            }
             ListViewItem[] stationListView = new ListViewItem[stationBoard.Entries.Count];
             int i = 0;
             foreach (StationBoard item in stationBoard.Entries)
@@ -141,6 +141,7 @@ namespace TimeTable
 
             return stationListView;
         }
+
         //get all connections into the ListView
         private ListViewItem[] GetConnection(string fromStation, string toStation)
         {
@@ -149,14 +150,8 @@ namespace TimeTable
             {
                 ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
             }
-            catch (Exception e)
-            {
-                ListViewItem[] errorListItemView = new ListViewItem[1];
-                errorListItemView[0] = new ListViewItem("Fehler:\n");
-                errorListItemView[0].SubItems.Add(e.Message);
-                return errorListItemView;
+            catch { }
 
-            }
             ListViewItem[] listView = new ListViewItem[ConnectionListView.ConnectionList.Count];
             for (int i = 0; i < ConnectionListView.ConnectionList.Count; i++)
             {
@@ -172,6 +167,7 @@ namespace TimeTable
             }
             return listView;
         }
+
         //get all stations for the Station Combobox
         private void GetToStation(string location, ComboBox cmbStation)
         {

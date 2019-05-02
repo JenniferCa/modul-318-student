@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SBBTimetable.Properties
+namespace TimeTable.Properties
 {
 
 
