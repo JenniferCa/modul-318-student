@@ -14,12 +14,12 @@ namespace TimeTable
     public partial class TableForm : Form
     {
         //Variabelen
-        List<string> fromStationId = new List<string>();
-        List<Station> stationList = new List<Station>();
-        Transport transport = new Transport();
         string departureTime = null;
         string departureDate = null;
         int isArrivalTime = 1;
+        List<string> fromStationId = new List<string>();
+        List<Station> stationList = new List<Station>();
+        Transport transport = new Transport();
 
         public TableForm()
         {
