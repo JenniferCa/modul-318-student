@@ -11,7 +11,7 @@ namespace TimeTableUnitTest
     {
         //Public Functions in TimeTable
         [TestMethod]
-        public void getStationBoardTest()
+        public void getStationsTest()
         {
             //arrange
             TableForm mainFormTest = new TableForm();
