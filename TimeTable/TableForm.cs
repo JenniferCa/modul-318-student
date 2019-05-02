@@ -42,10 +42,10 @@ namespace TimeTable
         //show Connections in ListView
         private void btnSearchForConnections_Click(object sender, EventArgs e)
         {
-            SetDepartureDate();
-            SetDepartureTime();
             lvConnections.Items.Clear();
             lvConnections.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
+            SetDepartureDate();
+            SetDepartureTime();
         }
         //show the Departure Board from the Current "Von" Station
         private void btnDepartureBoard_Click(object sender, EventArgs e)
