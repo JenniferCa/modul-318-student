@@ -13,7 +13,7 @@ namespace TimeTable
 {
     public partial class TableForm : Form
     {
-        //Member Variabeln
+        //Variabelen
         List<string> fromStationId = new List<string>();
         List<Station> stationList = new List<Station>();
         Transport transport = new Transport();
