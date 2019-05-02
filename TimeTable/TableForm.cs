@@ -17,9 +17,9 @@ namespace TimeTable
         string departureTime = null;
         string departureDate = null;
         int isArrivalTime = 1;
+        Transport transport = new Transport();
         List<string> fromStationId = new List<string>();
         List<Station> stationList = new List<Station>();
-        Transport transport = new Transport();
 
         public TableForm()
         {
@@ -31,7 +31,7 @@ namespace TimeTable
         private void txtStation_TextChanged(object sender, EventArgs e)
         {
             cmbFromStation.Items.Clear();
-            GetFromStation(txtStation.Text, cmbFromStation);
+            GetFromStation(txtFromStation.Text, cmbFromStation);
         }
         //show Textinput in the "Nach" Station Combobox
         private void txtToStation_TextChanged(object sender, EventArgs e)
@@ -42,13 +42,13 @@ namespace TimeTable
         //show Connections in ListView
         private void btnSearchForConnections_Click(object sender, EventArgs e)
         {
-            lvConnections.Items.Clear();
-            lvConnections.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
             SetDepartureDate();
             SetDepartureTime();
+            lvTable.Items.Clear();
+            lvTable.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
         }
         //show the Departure Board from the Current "Von" Station
-        private void btnDepartureBoard_Click(object sender, EventArgs e)
+        private void btnDepartureTable_Click(object sender, EventArgs e)
         {
             if (cmbFromStation.SelectedIndex != -1)
             {
@@ -61,10 +61,18 @@ namespace TimeTable
         //show the Current "Nach" Station on the Map
         private void btnMap_Click(object sender, EventArgs e)
         {
-            if (cmbToStation.SelectedIndex != -1)
+            if(cmbToStation.SelectedIndex != -1)
             {
                 Map gMap = new Map();
                 gMap.GetLocation(stationList, transport, cmbToStation.SelectedItem.ToString());
+            }
+        }
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            if(cmbFromStation.SelectedIndex != -1 && cmbToStation.SelectedIndex != -1)
+            {
+                Email emailTextForm = new Email();
+                emailTextForm.ShowDialog();
             }
         }
         //get all stations for the "Von" Station Combobox
@@ -91,12 +99,12 @@ namespace TimeTable
         //set the departureTime
         private void SetDepartureTime()
         {
-            departureTime = (tpFromTime.Value.Hour) + ":" + tpFromTime.Value.Minute;
+            departureTime = (tpTime.Value.Hour) + ":" + tpTime.Value.Minute;
         }
         //set the departureDate
         private void SetDepartureDate()
         {
-            departureDate = tpFromDate.Value.Year + "-" + tpFromDate.Value.Month + "-" + tpFromDate.Value.Day;
+            departureDate = tpDate.Value.Year + "-" + tpDate.Value.Month + "-" + tpDate.Value.Day;
         }
         public ListViewItem[] GetStationBoard(string fromStation)
         {

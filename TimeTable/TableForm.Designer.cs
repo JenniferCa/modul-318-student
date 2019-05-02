@@ -30,79 +30,80 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableForm));
             this.lblTime = new System.Windows.Forms.Label();
-            this.tpFromTime = new System.Windows.Forms.DateTimePicker();
+            this.tpTime = new System.Windows.Forms.DateTimePicker();
             this.txtToStation = new System.Windows.Forms.TextBox();
-            this.txtStation = new System.Windows.Forms.TextBox();
-            this.lblConnections = new System.Windows.Forms.Label();
+            this.txtFromStation = new System.Windows.Forms.TextBox();
+            this.lblTable = new System.Windows.Forms.Label();
             this.btnMap = new System.Windows.Forms.Button();
-            this.btnDepartureBoard = new System.Windows.Forms.Button();
+            this.btnDepartureTable = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
-            this.tpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.tpDate = new System.Windows.Forms.DateTimePicker();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvConnections = new System.Windows.Forms.ListView();
+            this.lvTable = new System.Windows.Forms.ListView();
             this.cmbToStation = new System.Windows.Forms.ComboBox();
             this.cmbFromStation = new System.Windows.Forms.ComboBox();
             this.lblToPosition = new System.Windows.Forms.Label();
             this.lblFromPosition = new System.Windows.Forms.Label();
-            this.btnSearchForConnections = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(43, 186);
+            this.lblTime.Location = new System.Drawing.Point(278, 151);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(41, 20);
             this.lblTime.TabIndex = 54;
             this.lblTime.Text = "Zeit:";
             // 
-            // tpFromTime
+            // tpTime
             // 
-            this.tpFromTime.Checked = false;
-            this.tpFromTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpFromTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.tpFromTime.Location = new System.Drawing.Point(118, 186);
-            this.tpFromTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpFromTime.Name = "tpFromTime";
-            this.tpFromTime.ShowUpDown = true;
-            this.tpFromTime.Size = new System.Drawing.Size(137, 27);
-            this.tpFromTime.TabIndex = 53;
+            this.tpTime.Checked = false;
+            this.tpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.tpTime.Location = new System.Drawing.Point(350, 146);
+            this.tpTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpTime.Name = "tpTime";
+            this.tpTime.ShowUpDown = true;
+            this.tpTime.Size = new System.Drawing.Size(137, 27);
+            this.tpTime.TabIndex = 53;
             // 
             // txtToStation
             // 
             this.txtToStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtToStation.Location = new System.Drawing.Point(580, 52);
+            this.txtToStation.Location = new System.Drawing.Point(627, 52);
             this.txtToStation.Margin = new System.Windows.Forms.Padding(4);
             this.txtToStation.Name = "txtToStation";
             this.txtToStation.Size = new System.Drawing.Size(425, 27);
             this.txtToStation.TabIndex = 40;
             // 
-            // txtStation
+            // txtFromStation
             // 
-            this.txtStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txtStation.Location = new System.Drawing.Point(45, 52);
-            this.txtStation.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStation.Name = "txtStation";
-            this.txtStation.Size = new System.Drawing.Size(425, 27);
-            this.txtStation.TabIndex = 39;
+            this.txtFromStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtFromStation.Location = new System.Drawing.Point(45, 52);
+            this.txtFromStation.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFromStation.Name = "txtFromStation";
+            this.txtFromStation.Size = new System.Drawing.Size(425, 27);
+            this.txtFromStation.TabIndex = 39;
             // 
-            // lblConnections
+            // lblTable
             // 
-            this.lblConnections.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblConnections.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblConnections.Location = new System.Drawing.Point(47, 249);
-            this.lblConnections.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblConnections.Name = "lblConnections";
-            this.lblConnections.Size = new System.Drawing.Size(958, 32);
-            this.lblConnections.TabIndex = 52;
-            this.lblConnections.Text = "Verbindungen:";
-            this.lblConnections.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTable.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTable.Location = new System.Drawing.Point(47, 305);
+            this.lblTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(1005, 32);
+            this.lblTable.TabIndex = 52;
+            this.lblTable.Text = "Verbindungen:";
+            this.lblTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnMap
             // 
@@ -110,24 +111,26 @@
             this.btnMap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMap.BackgroundImage")));
             this.btnMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMap.Location = new System.Drawing.Point(280, 146);
+            this.btnMap.Location = new System.Drawing.Point(499, 52);
             this.btnMap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(101, 65);
+            this.btnMap.Size = new System.Drawing.Size(101, 63);
             this.btnMap.TabIndex = 43;
             this.btnMap.UseVisualStyleBackColor = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
             // 
-            // btnDepartureBoard
+            // btnDepartureTable
             // 
-            this.btnDepartureBoard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDepartureBoard.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDepartureBoard.Location = new System.Drawing.Point(791, 159);
-            this.btnDepartureBoard.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDepartureBoard.Name = "btnDepartureBoard";
-            this.btnDepartureBoard.Size = new System.Drawing.Size(213, 46);
-            this.btnDepartureBoard.TabIndex = 42;
-            this.btnDepartureBoard.Text = "Abfahr Tabelle";
-            this.btnDepartureBoard.UseVisualStyleBackColor = true;
+            this.btnDepartureTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDepartureTable.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDepartureTable.Location = new System.Drawing.Point(47, 238);
+            this.btnDepartureTable.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDepartureTable.Name = "btnDepartureTable";
+            this.btnDepartureTable.Size = new System.Drawing.Size(213, 46);
+            this.btnDepartureTable.TabIndex = 42;
+            this.btnDepartureTable.Text = "Abfahr Tabelle";
+            this.btnDepartureTable.UseVisualStyleBackColor = true;
+            this.btnDepartureTable.Click += new System.EventHandler(this.btnDepartureTable_Click);
             // 
             // lblDate
             // 
@@ -139,17 +142,17 @@
             this.lblDate.TabIndex = 50;
             this.lblDate.Text = "Datum:";
             // 
-            // tpFromDate
+            // tpDate
             // 
-            this.tpFromDate.Checked = false;
-            this.tpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.tpFromDate.Location = new System.Drawing.Point(118, 146);
-            this.tpFromDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpFromDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.tpFromDate.Name = "tpFromDate";
-            this.tpFromDate.Size = new System.Drawing.Size(135, 27);
-            this.tpFromDate.TabIndex = 49;
+            this.tpDate.Checked = false;
+            this.tpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tpDate.Location = new System.Drawing.Point(118, 146);
+            this.tpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.tpDate.Name = "tpDate";
+            this.tpDate.Size = new System.Drawing.Size(135, 27);
+            this.tpDate.TabIndex = 49;
             // 
             // columnHeader5
             // 
@@ -176,32 +179,33 @@
             this.columnHeader1.Text = "Von";
             this.columnHeader1.Width = 200;
             // 
-            // lvConnections
+            // lvTable
             // 
-            this.lvConnections.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5});
-            this.lvConnections.Location = new System.Drawing.Point(47, 284);
-            this.lvConnections.Margin = new System.Windows.Forms.Padding(4);
-            this.lvConnections.Name = "lvConnections";
-            this.lvConnections.Size = new System.Drawing.Size(959, 422);
-            this.lvConnections.TabIndex = 51;
-            this.lvConnections.TileSize = new System.Drawing.Size(168, 30);
-            this.lvConnections.UseCompatibleStateImageBehavior = false;
-            this.lvConnections.View = System.Windows.Forms.View.Details;
+            this.lvTable.Location = new System.Drawing.Point(47, 340);
+            this.lvTable.Margin = new System.Windows.Forms.Padding(4);
+            this.lvTable.Name = "lvTable";
+            this.lvTable.Size = new System.Drawing.Size(1006, 265);
+            this.lvTable.TabIndex = 51;
+            this.lvTable.TileSize = new System.Drawing.Size(168, 30);
+            this.lvTable.UseCompatibleStateImageBehavior = false;
+            this.lvTable.View = System.Windows.Forms.View.Details;
             // 
             // cmbToStation
             // 
             this.cmbToStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbToStation.FormattingEnabled = true;
-            this.cmbToStation.Location = new System.Drawing.Point(580, 87);
+            this.cmbToStation.Location = new System.Drawing.Point(627, 87);
             this.cmbToStation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbToStation.Name = "cmbToStation";
             this.cmbToStation.Size = new System.Drawing.Size(425, 28);
             this.cmbToStation.TabIndex = 48;
+            this.cmbToStation.Click += new System.EventHandler(this.txtToStation_TextChanged);
             // 
             // cmbFromStation
             // 
@@ -213,12 +217,13 @@
             this.cmbFromStation.Name = "cmbFromStation";
             this.cmbFromStation.Size = new System.Drawing.Size(425, 28);
             this.cmbFromStation.TabIndex = 47;
+            this.cmbFromStation.Click += new System.EventHandler(this.txtStation_TextChanged);
             // 
             // lblToPosition
             // 
             this.lblToPosition.AutoSize = true;
             this.lblToPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToPosition.Location = new System.Drawing.Point(576, 27);
+            this.lblToPosition.Location = new System.Drawing.Point(623, 27);
             this.lblToPosition.Name = "lblToPosition";
             this.lblToPosition.Size = new System.Drawing.Size(58, 20);
             this.lblToPosition.TabIndex = 46;
@@ -234,40 +239,55 @@
             this.lblFromPosition.TabIndex = 45;
             this.lblFromPosition.Text = "Von:";
             // 
-            // btnSearchForConnections
+            // btnSearch
             // 
-            this.btnSearchForConnections.BackColor = System.Drawing.Color.DimGray;
-            this.btnSearchForConnections.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchForConnections.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSearchForConnections.Location = new System.Drawing.Point(580, 159);
-            this.btnSearchForConnections.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearchForConnections.Name = "btnSearchForConnections";
-            this.btnSearchForConnections.Size = new System.Drawing.Size(197, 46);
-            this.btnSearchForConnections.TabIndex = 41;
-            this.btnSearchForConnections.Text = "Suchen";
-            this.btnSearchForConnections.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.DimGray;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSearch.Location = new System.Drawing.Point(855, 238);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(197, 46);
+            this.btnSearch.TabIndex = 41;
+            this.btnSearch.Text = "Suchen";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearchForConnections_Click);
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEmail.Location = new System.Drawing.Point(282, 238);
+            this.btnEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(213, 46);
+            this.btnEmail.TabIndex = 55;
+            this.btnEmail.Text = "Email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // TableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1077, 814);
+            this.ClientSize = new System.Drawing.Size(1112, 631);
+            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.tpFromTime);
+            this.Controls.Add(this.tpTime);
             this.Controls.Add(this.txtToStation);
-            this.Controls.Add(this.txtStation);
-            this.Controls.Add(this.lblConnections);
+            this.Controls.Add(this.txtFromStation);
+            this.Controls.Add(this.lblTable);
             this.Controls.Add(this.btnMap);
-            this.Controls.Add(this.btnDepartureBoard);
+            this.Controls.Add(this.btnDepartureTable);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.tpFromDate);
-            this.Controls.Add(this.lvConnections);
+            this.Controls.Add(this.tpDate);
+            this.Controls.Add(this.lvTable);
             this.Controls.Add(this.cmbToStation);
             this.Controls.Add(this.cmbFromStation);
             this.Controls.Add(this.lblToPosition);
             this.Controls.Add(this.lblFromPosition);
-            this.Controls.Add(this.btnSearchForConnections);
+            this.Controls.Add(this.btnSearch);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TableForm";
             this.Text = "Form1";
@@ -278,25 +298,26 @@
 
         #endregion
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.DateTimePicker tpFromTime;
+        private System.Windows.Forms.DateTimePicker tpTime;
         private System.Windows.Forms.TextBox txtToStation;
-        private System.Windows.Forms.TextBox txtStation;
-        private System.Windows.Forms.Label lblConnections;
+        private System.Windows.Forms.TextBox txtFromStation;
+        private System.Windows.Forms.Label lblTable;
         private System.Windows.Forms.Button btnMap;
-        private System.Windows.Forms.Button btnDepartureBoard;
+        private System.Windows.Forms.Button btnDepartureTable;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.DateTimePicker tpFromDate;
+        private System.Windows.Forms.DateTimePicker tpDate;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ListView lvConnections;
+        private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ComboBox cmbToStation;
         private System.Windows.Forms.ComboBox cmbFromStation;
         private System.Windows.Forms.Label lblToPosition;
         private System.Windows.Forms.Label lblFromPosition;
-        private System.Windows.Forms.Button btnSearchForConnections;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnEmail;
     }
 }
 

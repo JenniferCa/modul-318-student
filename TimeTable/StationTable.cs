@@ -18,9 +18,9 @@ namespace TimeTable
         }
         public void setListItemView()
         {
-            livStationboard.Items.Clear();
+            livStationtable.Items.Clear();
             TableForm mainForm = new TableForm();
-            livStationboard.Items.AddRange(mainForm.GetStationBoard(lblFromStation.Text));
+            livStationtable.Items.AddRange(mainForm.GetStationBoard(lblFromStation.Text));
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

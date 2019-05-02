@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.livStationboard = new System.Windows.Forms.ListView();
+            this.livStationtable = new System.Windows.Forms.ListView();
             this.colLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDeparture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,27 +40,28 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(590, 295);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 39);
             this.btnClose.TabIndex = 38;
             this.btnClose.Text = "Schliessen";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // livStationboard
+            // livStationtable
             // 
-            this.livStationboard.AutoArrange = false;
-            this.livStationboard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.livStationtable.AutoArrange = false;
+            this.livStationtable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colLine,
             this.colDeparture,
             this.colTo});
-            this.livStationboard.Location = new System.Drawing.Point(21, 68);
-            this.livStationboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.livStationboard.Name = "livStationboard";
-            this.livStationboard.Size = new System.Drawing.Size(667, 218);
-            this.livStationboard.TabIndex = 37;
-            this.livStationboard.UseCompatibleStateImageBehavior = false;
-            this.livStationboard.View = System.Windows.Forms.View.Details;
+            this.livStationtable.Location = new System.Drawing.Point(21, 68);
+            this.livStationtable.Margin = new System.Windows.Forms.Padding(4);
+            this.livStationtable.Name = "livStationtable";
+            this.livStationtable.Size = new System.Drawing.Size(667, 218);
+            this.livStationtable.TabIndex = 37;
+            this.livStationtable.UseCompatibleStateImageBehavior = false;
+            this.livStationtable.View = System.Windows.Forms.View.Details;
             // 
             // colLine
             // 
@@ -107,7 +108,7 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.livStationboard);
+            this.Controls.Add(this.livStationtable);
             this.Controls.Add(this.lblStation);
             this.Controls.Add(this.lblFromStation);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -120,7 +121,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ListView livStationboard;
+        private System.Windows.Forms.ListView livStationtable;
         private System.Windows.Forms.ColumnHeader colLine;
         private System.Windows.Forms.ColumnHeader colDeparture;
         private System.Windows.Forms.ColumnHeader colTo;
