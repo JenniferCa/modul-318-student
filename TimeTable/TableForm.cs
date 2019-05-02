@@ -88,38 +88,6 @@ namespace TimeTable
                 cmbStation.SelectedIndex = 0;
             }
         }
-        //get all connections into the ListView
-        private ListViewItem[] GetConnection(string fromStation, string toStation)
-        {
-            Connections ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
-            try
-            {
-                ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
-            }
-            catch (Exception e)
-            {
-                ListViewItem[] errorListItemView = new ListViewItem[1];
-                errorListItemView[0] = new ListViewItem("Fehler:\n");
-                errorListItemView[0].SubItems.Add(e.Message);
-                return errorListItemView;
-
-            }
-            ListViewItem[] listView = new ListViewItem[ConnectionListView.ConnectionList.Count];
-            for (int i = 0; i < ConnectionListView.ConnectionList.Count; i++)
-            {
-                listView[i] = new ListViewItem(ConnectionListView.ConnectionList[i].From.Station.Name);
-                listView[i].SubItems.Add(ConnectionListView.ConnectionList[i].To.Station.Name);
-                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].From.Departure).ToShortTimeString());
-                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].To.Arrival).ToShortTimeString());
-                listView[i].SubItems.Add(TimeSpan.Parse(ConnectionListView.ConnectionList[i].Duration.Substring(3)).TotalMinutes.ToString() + " Min");
-            }
-            if (listView == null)
-            {
-                listView[0] = new ListViewItem("Es sind keine Verbindungen vorhanden");
-            }
-            return listView;
-        }
-        
         public ListViewItem[] GetStationBoard(string fromStation)
         {
             Stations stations = new Stations();
@@ -154,6 +122,37 @@ namespace TimeTable
             }
 
             return stationListView;
+        }
+        //get all connections into the ListView
+        private ListViewItem[] GetConnection(string fromStation, string toStation)
+        {
+            Connections ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
+            try
+            {
+                ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
+            }
+            catch (Exception e)
+            {
+                ListViewItem[] errorListItemView = new ListViewItem[1];
+                errorListItemView[0] = new ListViewItem("Fehler:\n");
+                errorListItemView[0].SubItems.Add(e.Message);
+                return errorListItemView;
+
+            }
+            ListViewItem[] listView = new ListViewItem[ConnectionListView.ConnectionList.Count];
+            for (int i = 0; i < ConnectionListView.ConnectionList.Count; i++)
+            {
+                listView[i] = new ListViewItem(ConnectionListView.ConnectionList[i].From.Station.Name);
+                listView[i].SubItems.Add(ConnectionListView.ConnectionList[i].To.Station.Name);
+                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].From.Departure).ToShortTimeString());
+                listView[i].SubItems.Add(DateTime.Parse(ConnectionListView.ConnectionList[i].To.Arrival).ToShortTimeString());
+                listView[i].SubItems.Add(TimeSpan.Parse(ConnectionListView.ConnectionList[i].Duration.Substring(3)).TotalMinutes.ToString() + " Min");
+            }
+            if (listView == null)
+            {
+                listView[0] = new ListViewItem("Keine Verbindungen vorhanden");
+            }
+            return listView;
         }
         //get all stations for the Station Combobox
         private void GetToStation(string location, ComboBox cmbStation)
