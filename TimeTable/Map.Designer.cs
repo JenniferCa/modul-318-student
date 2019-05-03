@@ -34,13 +34,14 @@
             // 
             // btnCloseMap
             // 
-            this.btnCloseMap.Location = new System.Drawing.Point(797, 622);
-            this.btnCloseMap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCloseMap.Location = new System.Drawing.Point(805, 619);
+            this.btnCloseMap.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseMap.Name = "btnCloseMap";
             this.btnCloseMap.Size = new System.Drawing.Size(123, 34);
             this.btnCloseMap.TabIndex = 5;
             this.btnCloseMap.Text = "Schliessen";
             this.btnCloseMap.UseVisualStyleBackColor = true;
+            this.btnCloseMap.Click += new System.EventHandler(this.btnCloseMap_Click);
             // 
             // GMap_GMapControl
             // 
@@ -54,7 +55,7 @@
             this.GMap_GMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.GMap_GMapControl.LevelsKeepInMemmory = 5;
             this.GMap_GMapControl.Location = new System.Drawing.Point(31, 11);
-            this.GMap_GMapControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GMap_GMapControl.Margin = new System.Windows.Forms.Padding(4);
             this.GMap_GMapControl.MarkersEnabled = true;
             this.GMap_GMapControl.MaxZoom = 2;
             this.GMap_GMapControl.MinZoom = 2;
@@ -76,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1133, 666);
             this.Controls.Add(this.btnCloseMap);
             this.Controls.Add(this.GMap_GMapControl);

@@ -20,11 +20,15 @@ namespace TimeTable
         public Map()
         {
             InitializeComponent();
+            MinimizeBox = false;
+            MaximizeBox = false;
         }
+
         private void btnCloseMap_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void SetToLocation(double x, double y, string stationName)
         {
             GMap_GMapControl.CanDragMap = true;
@@ -36,6 +40,7 @@ namespace TimeTable
             GMap_GMapControl.Position = new PointLatLng(x, y);
             GMap_GMapControl.MapProvider = GMapProviders.GoogleMap;
         }
+
         public void GetLocation(List<Station> stations, Transport transport, string locationName)
         {
             stations = transport.GetStations(locationName).StationList;

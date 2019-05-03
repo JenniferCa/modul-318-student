@@ -39,7 +39,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(590, 295);
+            this.btnClose.Location = new System.Drawing.Point(638, 351);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 39);
@@ -58,7 +58,7 @@
             this.livStationtable.Location = new System.Drawing.Point(21, 68);
             this.livStationtable.Margin = new System.Windows.Forms.Padding(4);
             this.livStationtable.Name = "livStationtable";
-            this.livStationtable.Size = new System.Drawing.Size(667, 218);
+            this.livStationtable.Size = new System.Drawing.Size(717, 275);
             this.livStationtable.TabIndex = 37;
             this.livStationtable.UseCompatibleStateImageBehavior = false;
             this.livStationtable.View = System.Windows.Forms.View.Details;
@@ -66,12 +66,12 @@
             // colLine
             // 
             this.colLine.Text = "Linie";
-            this.colLine.Width = 50;
+            this.colLine.Width = 83;
             // 
             // colDeparture
             // 
             this.colDeparture.Text = "Abfahrt Zeit";
-            this.colDeparture.Width = 67;
+            this.colDeparture.Width = 99;
             // 
             // colTo
             // 
@@ -97,7 +97,7 @@
             this.lblFromStation.Location = new System.Drawing.Point(163, 26);
             this.lblFromStation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFromStation.Name = "lblFromStation";
-            this.lblFromStation.Size = new System.Drawing.Size(527, 25);
+            this.lblFromStation.Size = new System.Drawing.Size(575, 25);
             this.lblFromStation.TabIndex = 39;
             this.lblFromStation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -105,8 +105,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(780, 400);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.livStationtable);
             this.Controls.Add(this.lblStation);

@@ -15,17 +15,22 @@ namespace TimeTable
         public StationTable()
         {
             InitializeComponent();
+            MinimizeBox = false;
+            MaximizeBox = false;
         }
+
         public void setListItemView()
         {
             livStationtable.Items.Clear();
             TableForm mainForm = new TableForm();
             livStationtable.Items.AddRange(mainForm.GetStationBoard(lblFromStation.Text));
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         public void setcmbFromStation(string station)
         {
             lblFromStation.Text = station;

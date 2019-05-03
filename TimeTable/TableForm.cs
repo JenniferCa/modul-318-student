@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 using SwissTransport;
 
 namespace TimeTable
@@ -25,10 +26,12 @@ namespace TimeTable
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MinimizeBox = false;
+            MaximizeBox = false;
         }
 
         //show Textinput in the "Von" Station Combobox
-        private void txtStation_TextChanged(object sender, EventArgs e)
+        private void txtFromStation_TextChanged(object sender, EventArgs e)
         {
             cmbFromStation.Items.Clear();
             GetFromStation(txtFromStation.Text, cmbFromStation);
@@ -39,15 +42,6 @@ namespace TimeTable
         {
             cmbToStation.Items.Clear();
             GetToStation(txtToStation.Text, cmbToStation);
-        }
-
-        //show Connections in ListView
-        private void btnSearchForConnections_Click(object sender, EventArgs e)
-        {
-            SetDepartureDate();
-            SetDepartureTime();
-            lvTable.Items.Clear();
-            lvTable.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
         }
 
         //show the Departure Board from the Current "Von" Station
@@ -62,7 +56,7 @@ namespace TimeTable
             }
         }
 
-        //show the Current "Nach" Station on the Map
+        //show the "Nach" Station on the Map
         private void btnMap_Click(object sender, EventArgs e)
         {
             if(cmbToStation.SelectedIndex != -1)
@@ -71,34 +65,34 @@ namespace TimeTable
                 gMap.GetLocation(stationList, transport, cmbToStation.SelectedItem.ToString());
             }
         }
-        private void btnEmail_Click(object sender, EventArgs e)
+
+        //switch Station Names
+        private void btnSwitch_Click(object sender, EventArgs e)
         {
-            if(cmbFromStation.SelectedIndex != -1 && cmbToStation.SelectedIndex != -1)
-            {
-                Email emailTextForm = new Email();
-                emailTextForm.ShowDialog();
-            }
+            string txtFrom = txtFromStation.Text;
+            string txtTo = txtToStation.Text;
+            string cmbFrom = cmbFromStation.Text;
+            string cmbTo = cmbToStation.Text;
+
+            txtFromStation.Text = txtTo;
+            txtToStation.Text = txtFrom;
+            cmbFromStation.Text = cmbTo;
+            cmbToStation.Text = cmbFrom;
         }
 
-        //get all stations for the "Von" Station Combobox
-        private void GetFromStation(string location, ComboBox cmbStation)
+        private void btnEmail_click(object sender, EventArgs e)
         {
-            Stations station = transport.GetStations(location);
-            List<string> fromStationList = new List<string>();
-            foreach (var item in station.StationList)
+            if (lvTable.Items.Count != 0)
             {
-                if (!string.IsNullOrEmpty(item.Name))
+                ListViewItem ItemMail = lvTable.Items[0];
+                string MailBody = null;
+
+                for (int i = 0; i <= ItemMail.SubItems.Count - 1; i++)
                 {
-                    fromStationList.Add(item.Name);
+                    MailBody += ItemMail.SubItems[i].Text + " ";
                 }
-            }
-            foreach (var item in fromStationList)
-            {
-                cmbStation.Items.Add(item);
-            }
-            if (cmbStation.Items.Count > 0)
-            {
-                cmbStation.SelectedIndex = 0;
+                var url = "mailto:Email@Provider.com?Subjekt=SwissTransport%20APP%202019&body=Verbindung: " + MailBody;
+                Process.Start(url);
             }
         }
 
@@ -113,6 +107,16 @@ namespace TimeTable
         {
             departureDate = tpDate.Value.Year + "-" + tpDate.Value.Month + "-" + tpDate.Value.Day;
         }
+
+        //show Connections in ListView
+        private void btnSearchForConnections_Click(object sender, EventArgs e)
+        {
+            SetDepartureDate();
+            SetDepartureTime();
+            lvTable.Items.Clear();
+            lvTable.Items.AddRange(GetConnection(cmbFromStation.Text, cmbToStation.Text));
+        }
+
         public ListViewItem[] GetStationBoard(string fromStation)
         {
             Stations stations = new Stations();
@@ -142,7 +146,6 @@ namespace TimeTable
             return stationListView;
         }
 
-        //get all connections into the ListView
         private ListViewItem[] GetConnection(string fromStation, string toStation)
         {
             Connections ConnectionListView = transport.GetConnections(fromStation, toStation, departureDate, departureTime, isArrivalTime);
@@ -168,7 +171,29 @@ namespace TimeTable
             return listView;
         }
 
-        //get all stations for the Station Combobox
+        //get all stations for the "Von" Station Combobox
+        private void GetFromStation(string location, ComboBox cmbStation)
+        {
+            Stations station = transport.GetStations(location);
+            List<string> fromStationList = new List<string>();
+            foreach (var item in station.StationList)
+            {
+                if (!string.IsNullOrEmpty(item.Name))
+                {
+                    fromStationList.Add(item.Name);
+                }
+            }
+            foreach (var item in fromStationList)
+            {
+                cmbStation.Items.Add(item);
+            }
+            if (cmbStation.Items.Count > 0)
+            {
+                cmbStation.SelectedIndex = 0;
+            }
+        }
+
+        //get stations for the Station Combobox
         private void GetToStation(string location, ComboBox cmbStation)
         {
             Stations station = transport.GetStations(location);
