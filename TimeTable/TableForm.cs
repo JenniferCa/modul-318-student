@@ -14,7 +14,7 @@ namespace TimeTable
 {
     public partial class TableForm : Form
     {
-        //Variabelen
+        //Variablen
         string departureTime = null;
         string departureDate = null;
         int isArrivalTime = 1;
